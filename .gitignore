@@ -1,0 +1,5 @@
+/cookbooks
+/.vagrant
+/tmp
+*.iml
+.idea
