@@ -12,6 +12,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu64_12"
 
+  config.omnibus.chef_version = "11.8.0"
+
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   # config.vm.box_url = "http://domain.com/path/to/above.box"
@@ -47,7 +49,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :virtualbox do |vb|
     vb.name = "Ubuntu 12.04 DevBox"
     vb.gui = true
-  
+
   # 2 CPUs, 1024MB RAM, 256 MB VRAM, 3D accelaration, bi-directional clipboard and drag'n'drop for start
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
     vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -55,16 +57,38 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--cpus", "2"]
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
-          
+
   # Attach IDE controller
       # vb.customize ["storagectl", :id, "--name", "IDE", "--add", "ide", "--controller", "PIIX4"]
   # Attach empty DVD drive to IDE controller
       # vb.customize ["storageattach", :id, "--storagectl", "IDE", "--device", "0", "--port", "0", "--type", "dvddrive", "--medium", "emptydrive"]
   end
- 
-  config.vm.provision "shell",
-      inline: "apt-get -y install ubuntu-desktop; shutdown -r now"
-      
+
+  #config.vm.provision "shell",
+  #    inline: "apt-get -y install ubuntu-desktop; shutdown -r now"
+
+  config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "java"
+    chef.json = {
+
+        :java => {
+            :install_flavor => "oracle",
+            :jdk_version => 7,
+            :jdk => {
+                "7" => {
+                    :x86_64 => {
+                        :url => "http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz",
+                        :checksum => "f2eae4d81c69dfa79d02466d1cb34db2b628815731ffc36e9b98f96f46f94b1a"
+                    }
+                }
+            },
+            :oracle => {
+                :accept_oracle_download_terms => true
+            }
+        }
+    }
+  end
+
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
