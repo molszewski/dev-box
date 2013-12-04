@@ -20,7 +20,7 @@ default_attributes(
 )
 
 run_list(
-    "recipe[apt]",
+    "recipe[apt-wrapper]",
     "recipe[git]",
     "recipe[java]"
 )
