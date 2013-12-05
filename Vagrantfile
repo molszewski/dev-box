@@ -4,6 +4,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # base box name
   config.vm.box = "ubuntu64_12"
+  config.berkshelf.enabled = true
 
   # omnibus plugin
   config.omnibus.chef_version = "11.8.0"
@@ -35,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # chef provisioning
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = ['cookbooks', 'my-cookbooks']
+    chef.cookbooks_path = 'my-cookbooks'
     chef.add_recipe 'application'
   end
 end

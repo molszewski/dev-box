@@ -1,0 +1,40 @@
+{
+  "sources": {
+    "apt": {
+      "locked_version": "2.3.0"
+    },
+    "java": {
+      "locked_version": "1.15.4"
+    },
+    "git": {
+      "locked_version": "2.7.0"
+    },
+    "apt-wrapper": {
+      "path": "./my-cookbooks/apt-wrapper"
+    },
+    "application": {
+      "path": "./my-cookbooks/application"
+    },
+    "windows": {
+      "locked_version": "1.11.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "aws": {
+      "locked_version": "1.0.0"
+    },
+    "dmg": {
+      "locked_version": "2.0.8"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "yum": {
+      "locked_version": "2.4.4"
+    },
+    "runit": {
+      "locked_version": "1.4.0"
+    }
+  }
+}
