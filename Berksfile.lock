@@ -10,10 +10,10 @@
       "locked_version": "2.7.0"
     },
     "apt-wrapper": {
-      "path": "./my-cookbooks/apt-wrapper"
+      "path": "./cookbooks/apt-wrapper"
     },
     "application": {
-      "path": "./my-cookbooks/application"
+      "path": "./cookbooks/application"
     },
     "windows": {
       "locked_version": "1.11.0"
