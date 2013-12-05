@@ -3,11 +3,17 @@
     "apt": {
       "locked_version": "2.3.0"
     },
+    "ark": {
+      "locked_version": "0.4.0"
+    },
     "java": {
       "locked_version": "1.15.4"
     },
     "git": {
       "locked_version": "2.7.0"
+    },
+    "gradle": {
+      "locked_version": "1.5.1"
     },
     "apt-wrapper": {
       "path": "./cookbooks/apt-wrapper"

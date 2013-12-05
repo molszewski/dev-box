@@ -13,3 +13,8 @@ override[:java] = {
         :accept_oracle_download_terms => true
     }
 }
+
+override[:gradle] = {
+  :version => '1.9',
+  :url => 'http://services.gradle.org/distributions/gradle-1.9-bin.zip'
+}
