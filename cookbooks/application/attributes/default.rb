@@ -18,3 +18,10 @@ override[:gradle] = {
   :version => '1.9',
   :url => 'http://services.gradle.org/distributions/gradle-1.9-bin.zip'
 }
+
+override[:maven] = {
+ '3' => {
+     :url => 'http://apache.mirrors.tds.net/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz',
+     :checksum => '077ed466455991d5abb4748a1d022e2d2a54dc4d557c723ecbacdc857c61d51b'
+  }
+}

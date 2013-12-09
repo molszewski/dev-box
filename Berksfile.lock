@@ -15,6 +15,9 @@
     "gradle": {
       "locked_version": "1.5.1"
     },
+    "maven": {
+      "locked_version": "1.0.0"
+    },
     "apt-wrapper": {
       "path": "./cookbooks/apt-wrapper"
     },
