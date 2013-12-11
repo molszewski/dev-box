@@ -18,6 +18,9 @@
     "maven": {
       "locked_version": "1.0.0"
     },
+    "nvm": {
+      "locked_version": "0.1.0"
+    },
     "apt-wrapper": {
       "path": "./cookbooks/apt-wrapper"
     },

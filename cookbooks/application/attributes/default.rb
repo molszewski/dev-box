@@ -25,3 +25,5 @@ override[:maven] = {
      :checksum => '077ed466455991d5abb4748a1d022e2d2a54dc4d557c723ecbacdc857c61d51b'
   }
 }
+
+override[:nvm][:node][:version] = 'v0.10.22'
