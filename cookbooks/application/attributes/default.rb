@@ -27,3 +27,4 @@ override[:maven] = {
 }
 
 override[:nvm][:node][:version] = 'v0.10.22'
+override[:users] = ['devbox']

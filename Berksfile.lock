@@ -21,6 +21,9 @@
     "nvm": {
       "locked_version": "0.1.0"
     },
+    "user": {
+      "locked_version": "0.3.0"
+    },
     "apt-wrapper": {
       "path": "./cookbooks/apt-wrapper"
     },

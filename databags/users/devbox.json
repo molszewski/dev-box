@@ -1,0 +1,6 @@
+{
+    "id"        : "devbox",
+    "comment"   : "Dev Box User",
+    "home"      : "/home/devbox",
+    "groups"    : ["vboxsf", "sudo"]
+}
